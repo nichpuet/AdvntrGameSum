@@ -28,15 +28,24 @@ namespace AdvntrGameSum
 
             if (e.KeyCode == Keys.B)
             {
+                if (scene == 0)  { scene = 1;}
+                else if (scene == 1) { scene = 17; }
+                else if (scene == 3) { scene = 4; }
+
             }
             else if (e.KeyCode == Keys.R)
             {
+                if (scene == 0) { scene = 2; }
+                else if (scene == 1) { scene = 20; }
+                else if (scene == 3) { scene = 5; }
             }
             else if (e.KeyCode == Keys.G)
             {
+                if(scene == 1) { scene = 6; }
             }
             else if (e.KeyCode == Keys.Y)
             {
+                if (scene == 1) { scene = 3; }
             }
 
             switch (scene)
@@ -241,13 +250,68 @@ namespace AdvntrGameSum
                     break;
                 case 19:
                     outputLabel.Text = "You don't try to seal the breach and run down an empty hallway. You come across an empty alien ship.";
+                    scene = 9;
+                    break;
+                case 20:
+                    outputLabel.Text = "You stumble out of the elevator into the cafeteria. Do you stress eat?";
+                    blueLabel.Text = "Stress Eat.";
+                    redLabel.Text = "Don't Eat";
+                    greenLabel.Text = "";
+                    yellowLabel.Text = "";
+                    break;
+                case 21:
+                    outputLabel.Text = "You spend too long eating and the ship collapses around you. /nClick on the white box to try again.";
+                    blueLabel.Text = "";
+                    redLabel.Text = "";
+                    greenLabel.Text = "";
+                    yellowLabel.Text = "";
+                    outputLabel.Enabled = true;
+                    break;
+                case 22:
+                    outputLabel.Text = "Keep going without eating. You come across a security room. Try to open the door?";
+                    blueLabel.Text = "Yes.";
+                    redLabel.Text = "No.";
+                    greenLabel.Text = "";
+                    yellowLabel.Text = "";
+                    break;
+                case 23:
+                    if (randNum50 == 1)
+                    {
+                        outputLabel.Text = "You manage to get the door open and see on one of the security monitors that theres an alien lurking behind the light on the righthand hallway.";
+                        outputLabel.Text += "You go back out into the hallway and come to a fork in the path. Go down the dark hall on the left or the bright hall on the right?";
+                        blueLabel.Text = "Left";
+                        redLabel.Text = "Right";
+                        greenLabel.Text = "";
+                        yellowLabel.Text = "";
+                    }
+                    else
+                    {
+                        outputLabel.Text = "You keep going down the hallway and come to a fork in the path. Go down the dark hall on the left or the bright hall on the right?";
+                        blueLabel.Text = "Left";
+                        redLabel.Text = "Right";
+                        greenLabel.Text = "";
+                        yellowLabel.Text = "";
+                    }
+                    break;
+                case 24:
+                    outputLabel.Text = "You head down the right hallway and are suddenly mauled by an alien hiding behind the light. You have died. /nClick on the white box to try again.";
+                    outputLabel.Text += "You go back out into the hallway and come to a fork in the path. Go down the dark hall on the left or the bright hall on the right?";
+                    blueLabel.Text = "";
+                    redLabel.Text = "";
+                    greenLabel.Text = "";
+                    yellowLabel.Text = "";
+                    outputLabel.Enabled = true;
+                    break;
+                case 25:
+                    outputLabel.Text = "You head down the left hallway and come out unscathed. You come out of the hall to a hangar with an unattended alien ship.";
+                    scene = 9;
                     break;
             }
         }
 
         private void outputLabel_Click(object sender, EventArgs e)
         {
-            outputLabel.Text = "";
+            outputLabel.Text = "You wake up on to the sound of sirens blaring. You hear a loud speaking saying there has been a breach in the hull, please proceed to the nearest escape pods. What do you do? ";
             blueLabel.Text = "Go to the /nright room";
             redLabel.Text = "Go to the /nleft room";
         }
