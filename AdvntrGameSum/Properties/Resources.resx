@@ -124,6 +124,15 @@
   <data name="blue_50x501" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bombSiren" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BOMB_SIREN-BOMB_SIREN-247265934.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="creakingMetal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Submarine Creaking-SoundBible.com-650968959.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="elevatorNoise" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\156509__primeval-polypod__pneumatic-door.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="green_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_50x50.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -135,6 +144,9 @@
   </data>
   <data name="red_50x501" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spaceWoosh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flyby-Conor-1500306612.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="yellow_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yellow_50x50.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -81,6 +81,33 @@ namespace AdvntrGameSum.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream bombSiren {
+            get {
+                return ResourceManager.GetStream("bombSiren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream creakingMetal {
+            get {
+                return ResourceManager.GetStream("creakingMetal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream elevatorNoise {
+            get {
+                return ResourceManager.GetStream("elevatorNoise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon green_50x50 {
@@ -117,6 +144,15 @@ namespace AdvntrGameSum.Properties {
             get {
                 object obj = ResourceManager.GetObject("red_50x501", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream spaceWoosh {
+            get {
+                return ResourceManager.GetStream("spaceWoosh", resourceCulture);
             }
         }
         

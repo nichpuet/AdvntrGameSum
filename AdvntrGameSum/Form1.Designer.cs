@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.outputLabel = new System.Windows.Forms.Label();
             this.blueImage = new System.Windows.Forms.Label();
             this.blueLabel = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.redLabel = new System.Windows.Forms.Label();
             this.greenLabel = new System.Windows.Forms.Label();
             this.yellowLabel = new System.Windows.Forms.Label();
+            this.sceneTester = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // outputLabel
@@ -50,7 +52,6 @@
             this.outputLabel.Text = "You wake up on to the sound of sirens blaring. You hear a loud speaking saying \"t" +
     "here has been a breach in the hull, please proceed to the nearest escape pods.\"\r" +
     "\nWhat do you do?";
-            this.outputLabel.Click += new System.EventHandler(this.outputLabel_Click);
             // 
             // blueImage
             // 
@@ -118,12 +119,20 @@
             this.yellowLabel.Size = new System.Drawing.Size(0, 13);
             this.yellowLabel.TabIndex = 8;
             // 
+            // sceneTester
+            // 
+            this.sceneTester.Location = new System.Drawing.Point(193, 338);
+            this.sceneTester.Name = "sceneTester";
+            this.sceneTester.Size = new System.Drawing.Size(78, 16);
+            this.sceneTester.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(284, 361);
+            this.Controls.Add(this.sceneTester);
             this.Controls.Add(this.yellowLabel);
             this.Controls.Add(this.greenLabel);
             this.Controls.Add(this.redLabel);
@@ -133,8 +142,10 @@
             this.Controls.Add(this.blueLabel);
             this.Controls.Add(this.blueImage);
             this.Controls.Add(this.outputLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Space Game";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,6 +162,7 @@
         private System.Windows.Forms.Label redLabel;
         private System.Windows.Forms.Label greenLabel;
         private System.Windows.Forms.Label yellowLabel;
+        private System.Windows.Forms.Label sceneTester;
     }
 }
 

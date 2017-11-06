@@ -103,5 +103,17 @@
   <ItemGroup>
     <None Include="Resources\yellow_50x50.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\156509__primeval-polypod__pneumatic-door.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOMB_SIREN-BOMB_SIREN-247265934.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flyby-Conor-1500306612.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Submarine Creaking-SoundBible.com-650968959.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
