@@ -47,7 +47,7 @@
             this.outputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.outputLabel.Location = new System.Drawing.Point(12, 9);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(260, 185);
+            this.outputLabel.Size = new System.Drawing.Size(260, 168);
             this.outputLabel.TabIndex = 0;
             this.outputLabel.Text = "You wake up on to the sound of sirens blaring. You hear a loud speaking saying \"t" +
     "here has been a breach in the hull, please proceed to the nearest escape pods.\"\r" +

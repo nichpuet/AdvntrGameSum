@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Nick Puetz | Adventure Game Summative | 11/8/2017
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,17 +10,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Threading;
 
 namespace AdvntrGameSum
 {
     public partial class Form1 : Form
-    {
+    {   //Sets up the scene variable as global and sets up the 25 and 50% chance generators
         int scene = 0;
         Random rand50 = new Random();
         Random rand25 = new Random();
 
         int randNum50;
         int randNum25;
+
+        //Sets up the 4 sounds used throughout the game 
         SoundPlayer elevator = new SoundPlayer(Properties.Resources.elevatorNoise);
         SoundPlayer alarm = new SoundPlayer(Properties.Resources.bombSiren);
         SoundPlayer space = new SoundPlayer(Properties.Resources.spaceWoosh);
@@ -26,17 +31,18 @@ namespace AdvntrGameSum
 
 
         public Form1()
-        {
+        {//Plays the alarm sound at the beginning when the starting text is up. Also sets a scene tester label to visible cause I dont know where it is.
             InitializeComponent();
             alarm.Play();
 
-            sceneTester.Text = Convert.ToString(scene);
+            sceneTester.Visible = false;
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
+        {//Random number generators.
             randNum50 = rand50.Next(1, 3);
             randNum25 = rand25.Next(1, 5);
 
+            //If statements for the different buttons bound to R, B, G, Y, and Q.
             if (e.KeyCode == Keys.B)
             {
                 if (scene == 0) { scene = 1; }
@@ -63,6 +69,7 @@ namespace AdvntrGameSum
                 else if (scene == 20) { scene = 22; }
                 else if (scene == 22) { scene = 27; }
                 else if (scene == 27) { scene = 25; }
+                //Else if for if you are in a scene you died in to reset it if they picked to restart.
                 else if (scene == 2 || scene == 4 || scene == 5 || scene == 7 || scene == 9 || scene == 10 || scene == 12 || scene == 13 || scene == 15 || scene == 18 || scene == 21 || scene == 24)
                 {
                     outputLabel.Text = "You wake up on to the sound of sirens blaring. You hear a loud speaking saying there has been a breach in the hull, please proceed to the nearest escape pods. What do you do? ";
@@ -81,10 +88,13 @@ namespace AdvntrGameSum
                 if (scene == 1) { scene = 3; }
             }
             else if (e.KeyCode == Keys.Q)
-            {
-                Close();
+            {//If you died and press Q the game closes.
+                if (scene == 2 || scene == 4 || scene == 5 || scene == 7 || scene == 9 || scene == 10 || scene == 12 || scene == 13 || scene == 15 || scene == 18 || scene == 21 || scene == 24)
+                {
+                    Close();
+                }
             }
-
+            //Just a very large switch statement for the different scenes. Some of them are a bit weird.
             switch (scene)
             {
                 case 1:
@@ -108,7 +118,7 @@ namespace AdvntrGameSum
                     elevator.Play();
                     outputLabel.Text = "You enter a control room. Do you become the captain?";
                     blueLabel.Text = "You are the \ncaptain now";
-                    redLabel.Text = "Don't become the \ncaptain.";
+                    redLabel.Text = "Don't become \nthe captain.";
                     greenLabel.Text = "";
                     yellowLabel.Text = "";
                     break;
@@ -134,7 +144,7 @@ namespace AdvntrGameSum
                 case 6:
                     elevator.Play();
                     outputLabel.Text = "You come out of the elevator to a long dark hallway. How do you proceed.";
-                    blueLabel.Text = "Proceed Carefully";
+                    blueLabel.Text = "Proceed \nCarefully";
                     redLabel.Text = "Run as fast as \nyou can";
                     greenLabel.Text = "";
                     yellowLabel.Text = "";
@@ -150,12 +160,13 @@ namespace AdvntrGameSum
                     break;
                 case 8:
                     outputLabel.Text = "You run quickly down the hallway and notice an alien lurking behind you. You round the " +
-                        "corner and enter a hangar with an unattended alien ship.";
+                        "corner and enter a hangar with an unattended alien ship. \nPress any key to continue.";
                     blueLabel.Text = "";
                     redLabel.Text = "";
                     greenLabel.Text = "";
                     yellowLabel.Text = "";
                     scene = 9;
+                    this.Refresh();
                     break;
                 case 9:
                     if (randNum25 == 1)
@@ -171,8 +182,8 @@ namespace AdvntrGameSum
                     else
                     {
                         outputLabel.Text = "You fail to start the ship and have alerted all the aliens on the ship!";
-                        blueLabel.Text = "Hide behind some crates";
-                        redLabel.Text = "Search the ship";
+                        blueLabel.Text = "Hide behind \nsome crates";
+                        redLabel.Text = "Search the \nship";
                         greenLabel.Text = "";
                         yellowLabel.Text = "";
                     }
@@ -238,7 +249,7 @@ namespace AdvntrGameSum
                     outputLabel.Text = "You take the alien down with the second shot but the third one picks up its gun and takes a shot";
                     if (randNum50 == 1)
                     {
-                        outputLabel.Text = "You get hit by the second aliens shots. You have died. \nPress Q to quit and R to try again.";
+                        outputLabel.Text = "You get hit by the third aliens shots. You have died. \nPress Q to quit and R to try again.";
                         blueLabel.Text = "";
                         redLabel.Text = "";
                         greenLabel.Text = "";
@@ -266,12 +277,13 @@ namespace AdvntrGameSum
                     outputLabel.Enabled = true;
                     break;
                 case 16:
-                    outputLabel.Text = "Take down the third alien unnoticed. But for how long? Pick a target.";
+                    outputLabel.Text = "Take down the third alien unnoticed. But for how long? /nPress any key to continue.";
                     blueLabel.Text = "";
                     redLabel.Text = "";
                     greenLabel.Text = "";
                     yellowLabel.Text = "";
                     scene = 26;
+                    this.Refresh();
                     break;
                 case 17:
                     elevator.Play();
@@ -304,8 +316,10 @@ namespace AdvntrGameSum
                     }
                     break;
                 case 19:
-                    outputLabel.Text = "You don't try to seal the breach and run down an empty hallway. You come across an empty alien ship.";
+                    outputLabel.Text = "You don't try to seal the breach and run down an empty hallway. You come across an empty alien ship.\nPress any key to continue.";
+                    Thread.Sleep(1500);
                     scene = 9;
+                    this.Refresh();
                     break;
                 case 20:
                     elevator.Play();
@@ -356,8 +370,9 @@ namespace AdvntrGameSum
                     break;
                 case 25:
                     outputLabel.Text = "You head down the left hallway and come out unscathed. You come out of the hall to" +
-                        " a hangar with an unattended alien ship.";
+                        " a hangar with an unattended alien ship. \nPress any key to continue.";
                     scene = 9;
+                    this.Refresh();
                     break;
                 case 26:
                     outputLabel.Text += "You get take down the last 2 aliens in rapid succession, you run to the aliens " +
@@ -378,14 +393,6 @@ namespace AdvntrGameSum
                     break;
             }
             Refresh();
-        }
-
-        private void outputLabel_Click(object sender, EventArgs e)
-        {
-            outputLabel.Text = "You wake up on to the sound of sirens blaring. You hear a loud speaking saying there has " +
-                "been a breach in the hull, please proceed to the nearest escape pods. What do you do? ";
-            blueLabel.Text = "Go to the \nright room";
-            redLabel.Text = "Go to the \nleft room";
         }
     }
 }
