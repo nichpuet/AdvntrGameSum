@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="outputLabel.Text" xml:space="preserve">
+    <value>You wake up on to the sound of sirens blaring. You hear a loud speaking saying "there has been a breach in the hull, please proceed to the nearest escape pods."
+What do you do?
+
+R is for Red, B is for Blue, G is for Green, and Y is for Yellow.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

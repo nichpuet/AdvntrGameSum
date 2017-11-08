@@ -72,7 +72,8 @@ namespace AdvntrGameSum
                 //Else if for if you are in a scene you died in to reset it if they picked to restart.
                 else if (scene == 2 || scene == 4 || scene == 5 || scene == 7 || scene == 9 || scene == 10 || scene == 12 || scene == 13 || scene == 15 || scene == 18 || scene == 21 || scene == 24)
                 {
-                    outputLabel.Text = "You wake up on to the sound of sirens blaring. You hear a loud speaking saying there has been a breach in the hull, please proceed to the nearest escape pods. What do you do? ";
+                    outputLabel.Text = "You wake up on to the sound of sirens blaring. You hear a loud speaking saying there has been a breach in the hull, please proceed to the nearest escape pods. What do you do?" +
+                        "\n\nR is for Red, B is for Blue, G is for Green, and Y is for Yellow.";
                     blueLabel.Text = "Go to the \nright room";
                     redLabel.Text = "Go to the \nleft room";
                     scene = 0;

@@ -49,9 +49,7 @@
             this.outputLabel.Name = "outputLabel";
             this.outputLabel.Size = new System.Drawing.Size(260, 168);
             this.outputLabel.TabIndex = 0;
-            this.outputLabel.Text = "You wake up on to the sound of sirens blaring. You hear a loud speaking saying \"t" +
-    "here has been a breach in the hull, please proceed to the nearest escape pods.\"\r" +
-    "\nWhat do you do?";
+            this.outputLabel.Text = resources.GetString("outputLabel.Text");
             // 
             // blueImage
             // 
